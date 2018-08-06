@@ -16,13 +16,24 @@ class App extends Component {
     });
   };
 
+  removeToDoItem = item => {
+    const todos = { ...this.state.todoItems };
+    delete todos[item];
+    this.setState({ todoItems: todos });
+  };
+
   render() {
     return (
       <div className="App">
         <TodoForm addToDoItems={this.addToDoItems} />
         <ul>
           {Object.keys(this.state.todoItems).map(key => (
-            <TodoList key={key} todoItems={this.state.todoItems[key]} />
+            <TodoList
+              key={key}
+              index={key}
+              todoItems={this.state.todoItems[key]}
+              removeToDoItem={this.removeToDoItem}
+            />
           ))}
         </ul>
       </div>
