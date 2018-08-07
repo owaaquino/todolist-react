@@ -5,11 +5,11 @@ class TodoForm extends React.Component {
 
   addItemOnList = e => {
     e.preventDefault();
-    console.log("beep!");
     const todoItem = {
       todo: this.todoRef.current.value
     };
     this.props.addToDoItems(todoItem);
+    e.currentTarget.reset();
   };
   render() {
     return (

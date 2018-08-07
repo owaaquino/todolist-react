@@ -29,7 +29,7 @@ class App extends Component {
         <ul>
           {Object.keys(this.state.todoItems).map(key => (
             <TodoList
-              key={key}
+              key={key} //why do we need to add keys again?
               index={key}
               todoItems={this.state.todoItems[key]}
               removeToDoItem={this.removeToDoItem}
