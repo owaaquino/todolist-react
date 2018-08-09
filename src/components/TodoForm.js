@@ -11,6 +11,7 @@ class TodoForm extends React.Component {
     this.props.addToDoItems(todoItem);
     e.currentTarget.reset();
   };
+
   render() {
     return (
       <form onSubmit={this.addItemOnList}>

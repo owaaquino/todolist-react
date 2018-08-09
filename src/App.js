@@ -21,6 +21,12 @@ class App extends Component {
     delete todos[item];
     this.setState({ todoItems: todos });
   };
+  
+  updateTodos = (key, updatedTodo) => {
+    const todos = { ...this.state.todoItems };
+    todos[key] = updatedTodo;
+    this.setState({ todoItems: todos });
+  }
 
   render() {
     return (
@@ -33,6 +39,7 @@ class App extends Component {
               index={key}
               todoItems={this.state.todoItems[key]}
               removeToDoItem={this.removeToDoItem}
+              updateTodos={this.updateTodos}
             />
           ))}
         </ul>
