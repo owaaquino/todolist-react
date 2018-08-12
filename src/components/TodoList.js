@@ -4,15 +4,15 @@ class TodoList extends React.Component {
   handleChange = event => {
     const updateTodo = {
       ...this.props.todoItems,
-      todo: event.currentTarget.value
+      [event.currentTarget.name]: event.currentTarget.value
     };
-    console.log(updateTodo);
+    console.log(event.currentTarget.value);
     this.props.updateTodos(this.props.index, updateTodo);
   };
-  render(){
-  return (
+  render() {
+    return (
       <li>
-        <input type="checkbox" name="isChecked" />
+        <input type="checkbox" name="isChecked" onChange={this.handleChange} />
         <input
           type="text"
           name="todo"
@@ -20,11 +20,12 @@ class TodoList extends React.Component {
           onChange={this.handleChange}
         />
         <button>Edit</button>
-        <button onClick={() => this.removeToDoItem(this.props.index)}>Delete</button>
+        <button onClick={() => this.props.removeToDoItem(this.props.index)}>
+          Delete
+        </button>
       </li>
     );
   }
-  
-};
+}
 
 export default TodoList;
