@@ -4,7 +4,8 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 class App extends Component {
   state = {
-    todoItems: {}
+    todoItems: {},
+    isChecked: false
   };
 
   addToDoItems = item => {
@@ -21,7 +22,7 @@ class App extends Component {
     delete todos[item];
     this.setState({ todoItems: todos });
   };
-  
+
   updateTodos = (key, updatedTodo) => {
     const todos = { ...this.state.todoItems };
     todos[key] = updatedTodo;

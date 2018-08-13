@@ -9,10 +9,27 @@ class TodoList extends React.Component {
     console.log(event.currentTarget.value);
     this.props.updateTodos(this.props.index, updateTodo);
   };
+
+  toggleCheckbox = event => {
+    // const updateCheckbox =
+    // console.log(event.currentTarget.checked);
+    const updateTodo = {
+      ...this.props.isChecked,
+      [event.currentTarget.name]: event.currentTarget.checked
+    };
+    // console.log(event.currentTarget.checked);
+    this.props.updateTodos(this.props.index, updateTodo);
+  };
+
   render() {
     return (
-      <li>
-        <input type="checkbox" name="isChecked" onChange={this.handleChange} />
+      <li className={this.props.todoItems.isChecked === true ? 'done' : null}>
+        <input
+          type="checkbox"
+          name="isChecked"
+          onChange={this.toggleCheckbox}
+          checked={this.props.todoItems.isChecked}
+        />
         <input
           type="text"
           name="todo"
