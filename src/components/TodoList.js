@@ -18,12 +18,12 @@ class TodoList extends React.Component {
       [event.currentTarget.name]: event.currentTarget.checked
     };
     // console.log(event.currentTarget.checked);
-    this.props.updateTodos(this.props.index, updateTodo);
+    this.props.updateTodoToggle(this.props.index, updateTodo);
   };
 
   render() {
     return (
-      <li className={this.props.todoItems.isChecked === true ? 'done' : null}>
+      <li className={this.props.todoItems.isChecked === true ? "done" : null}>
         <input
           type="checkbox"
           name="isChecked"

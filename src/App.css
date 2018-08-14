@@ -22,11 +22,22 @@
   font-size: large;
 }
 
-.done {
-  background-color: red;
+/* TO DO LIST FORM */
+
+#todoList-form {
+  padding-top: 50px;
+  width: 50%;
+  margin: 50px auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#todoList-form input {
+  height: 20px;
+  width: 500px;;
+}
+
+
+/* TO DO LIST ITEMS  */
+
+.done {
+  background-color: red;
 }
