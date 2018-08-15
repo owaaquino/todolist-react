@@ -31,13 +31,49 @@
 }
 
 #todoList-form input {
-  height: 20px;
-  width: 500px;;
+  height: 30px;
+  width: 80%;;
+  padding-left: 10px;
 }
 
+#todoList-form button {
+  padding: 5px 40px;
+  border: none;
+  background-color: #6B7FD7;
+  color: #fefefe;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 15px;
+}
 
 /* TO DO LIST ITEMS  */
 
 .done {
   background-color: red;
 }
+
+.del-btn {
+  border: none;
+  background: none;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+li {
+  width: 80%;
+  background-color: #BFC1D1;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: none;
+}
+

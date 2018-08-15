@@ -36,9 +36,12 @@ class TodoList extends React.Component {
           value={this.props.todoItems.todo}
           onChange={this.handleChange}
         />
-        <button>Edit</button>
-        <button onClick={() => this.props.removeToDoItem(this.props.index)}>
-          Delete
+        {/* <button>Edit</button> */}
+        <button
+          className="del-btn"
+          onClick={() => this.props.removeToDoItem(this.props.index)}
+        >
+          x
         </button>
       </li>
     );
