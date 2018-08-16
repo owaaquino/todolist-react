@@ -4,8 +4,8 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 class App extends Component {
   state = {
-    todoItems: {},
-    isChecked: false
+    todoItems: {}
+    // isChecked: false
   };
 
   addToDoItems = item => {

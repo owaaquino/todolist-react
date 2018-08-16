@@ -34,6 +34,9 @@
   height: 30px;
   width: 80%;;
   padding-left: 10px;
+  background-color: #F2F3F8;
+  border: none;
+
 }
 
 #todoList-form button {
@@ -44,7 +47,7 @@
   font-weight: 600;
   font-size: 16px;
   border-radius: 4px;
-  margin-top: 15px;
+  margin: 15px;
 }
 
 /* TO DO LIST ITEMS  */
@@ -56,9 +59,9 @@
 .del-btn {
   border: none;
   background: none;
-  color: #262626;
+  color: #37392E;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 100;
 }
 
 li {

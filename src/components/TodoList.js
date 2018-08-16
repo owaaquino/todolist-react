@@ -11,13 +11,10 @@ class TodoList extends React.Component {
   };
 
   toggleCheckbox = event => {
-    // const updateCheckbox =
-    // console.log(event.currentTarget.checked);
     const updateTodo = {
-      ...this.props.isChecked,
+      ...this.props.todoItems,
       [event.currentTarget.name]: event.currentTarget.checked
     };
-    // console.log(event.currentTarget.checked);
     this.props.updateTodoToggle(this.props.index, updateTodo);
   };
 
