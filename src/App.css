@@ -53,8 +53,14 @@
 /* TO DO LIST ITEMS  */
 
 .done {
-  background-color: red;
+  text-decoration: line-through;
+  color: #858585;
 }
+
+.done input[type=text] {
+  color: #858585;
+}
+
 
 .del-btn {
   border: none;
@@ -65,13 +71,13 @@
 }
 
 li {
-  width: 80%;
+  width: 50%;
   background-color: #BFC1D1;
   margin: 10px auto;
   padding: 10px;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 li input[type="checkbox"] {
@@ -80,3 +86,23 @@ li input[type="checkbox"] {
   background: none;
 }
 
+li input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 5px;;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  /* justify-content: flex-start; */
+   flex-grow: 2;
+}
+
+li input[type="text"]:focus {
+  background-color: #F2F3F8;
+  color: #37392E;
+}
+
+li button {
+  justify-content: flex-end;
+}
