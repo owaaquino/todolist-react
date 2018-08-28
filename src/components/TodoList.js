@@ -1,6 +1,10 @@
 import React from "react";
 
 class TodoList extends React.Component {
+  state = {
+    isChecked: false
+  };
+
   handleChange = event => {
     const updateTodo = {
       ...this.props.todoItems,
@@ -11,21 +15,26 @@ class TodoList extends React.Component {
   };
 
   toggleCheckbox = event => {
-    const updateTodo = {
-      ...this.props.todoItems,
-      [event.currentTarget.name]: event.currentTarget.checked
-    };
-    this.props.updateTodoToggle(this.props.index, updateTodo);
+    // const updateTodo = {
+    //   ...this.props.todoItems,
+    //   [event.currentTarget.name]: event.currentTarget.checked
+    // };
+    // this.props.updateTodoToggle(this.props.index, updateTodo);
+
+    this.setState({
+      isChecked: !this.state.isChecked
+    });
   };
 
   render() {
     return (
-      <li className={this.props.todoItems.isChecked === true ? "done" : null}>
+      <li className={this.state.isChecked === true ? "done" : null}>
         <input
           type="checkbox"
           name="isChecked"
+          checked={this.state.isChecked}
           onChange={this.toggleCheckbox}
-          checked={this.props.todoItems.isChecked}
+          // checked={this.props.todoItems.isChecked}
         />
         <input
           type="text"

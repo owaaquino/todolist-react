@@ -29,11 +29,11 @@ class App extends Component {
     this.setState({ todoItems: todos });
   };
 
-  updateTodoToggle = (key, updateTodoToggle) => {
-    const todos = { ...this.state.todoItems };
-    todos[key] = updateTodoToggle;
-    this.setState({ todoItems: todos });
-  };
+  // updateTodoToggle = (key, updateTodoToggle) => {
+  //   const todos = { ...this.state.todoItems };
+  //   todos[key] = updateTodoToggle;
+  //   this.setState({ todoItems: todos });
+  // };
 
   render() {
     return (
