@@ -5,7 +5,6 @@ import TodoList from "./components/TodoList";
 class App extends Component {
   state = {
     todoItems: {}
-    // isChecked: false
   };
 
   addToDoItems = item => {
@@ -29,12 +28,6 @@ class App extends Component {
     this.setState({ todoItems: todos });
   };
 
-  // updateTodoToggle = (key, updateTodoToggle) => {
-  //   const todos = { ...this.state.todoItems };
-  //   todos[key] = updateTodoToggle;
-  //   this.setState({ todoItems: todos });
-  // };
-
   render() {
     return (
       <div className="App">
@@ -42,12 +35,11 @@ class App extends Component {
         <ul>
           {Object.keys(this.state.todoItems).map(key => (
             <TodoList
-              key={key} //why do we need to add keys again?
+              key={key}
               index={key}
               todoItems={this.state.todoItems[key]}
               removeToDoItem={this.removeToDoItem}
               updateTodos={this.updateTodos}
-              updateTodoToggle={this.updateTodoToggle}
             />
           ))}
         </ul>

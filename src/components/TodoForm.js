@@ -6,7 +6,8 @@ class TodoForm extends React.Component {
   addItemOnList = e => {
     e.preventDefault();
     const todoItem = {
-      todo: this.todoRef.current.value
+      todo: this.todoRef.current.value,
+      isCompleted: false
     };
     this.props.addToDoItems(todoItem);
     e.currentTarget.reset();
