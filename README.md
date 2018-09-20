@@ -39,7 +39,7 @@ Some prerequisites:
 ## 1. Creating the ADD Funciton
 
 Lets start by creating a form with input box and and a add button
-```
+```javascript
     import React from "react";
 
     class TodoForm extends React.Component {
@@ -57,7 +57,7 @@ Lets start by creating a form with input box and and a add button
     export default TodoForm;
 ```
 After that, we create a function for our form when submitted
-```
+```javascript
     import React from "react";
 
     class TodoForm extends React.Component {
@@ -84,7 +84,7 @@ After that, we create a function for our form when submitted
     export default TodoForm;
 ```
 Next, we needed to get the value from the input box and transfer it to our state
-```
+```javascript
     import React from "react";
 
     class TodoForm extends React.Component {
@@ -123,7 +123,7 @@ Next, we needed to get the value from the input box and transfer it to our state
 ## 2. Read the new item to the list component
 
 First, lets create a component that will receive the state value and display it to the list item
-```
+```javascript
     import React from "react";
 
     class TodoList extends React.Component {
@@ -146,7 +146,7 @@ First, lets create a component that will receive the state value and display it 
     export default TodoList;
 ```
 Next, to be able to display all todo items we need to loop into our state object to display every item in it
-```
+```javascript
     import React, { Component } from "react";
     import "./App.css";
     import TodoForm from "./components/TodoForm";
@@ -192,7 +192,7 @@ Next, to be able to display all todo items we need to loop into our state object
 ## 3. Now lets create a Delete function for our to do list item
 
 In our App.js, we create a new function called removeToDoItem and  pass it on to our list item as props.
-```
+```javascript
     import React, { Component } from "react";
     import "./App.css";
     import TodoForm from "./components/TodoForm";
@@ -240,7 +240,7 @@ In our App.js, we create a new function called removeToDoItem and  pass it on to
     export default App;
 ```
 In our TodoList.js component, we added the props function we created from App.js to the delete button we have.
-```
+```javascript
     import React from "react";
 
     class TodoList extends React.Component {
@@ -274,7 +274,7 @@ In our TodoList.js component, we added the props function we created from App.js
 ## 4. Adding our Update functionality.
 
 In ToDoList.js, we added a function handlechange for changes in our to do item inputbox.
-```
+```javascript
     import React from "react";
 
     class TodoList extends React.Component {
@@ -317,7 +317,7 @@ In ToDoList.js, we added a function handlechange for changes in our to do item i
     export default TodoList;
 ```
 In our App.js, we create a new function updateTodos to set the states new value
-```
+```javascript
     import React, { Component } from "react";
     import "./App.css";
     import TodoForm from "./components/TodoForm";
@@ -374,7 +374,7 @@ In our App.js, we create a new function updateTodos to set the states new value
 ## 5. Toggling the To Do Item checkbox
 
 Now the last part is making the checkbox toggle, so we can set it to completed or incomplete. We create a new function in our TodoList.js called toggleCheckbox. Unlike handleChange function we update the item "isCompleted" state to true or false.
-```
+```javascript
     import React from "react";
 
     class TodoList extends React.Component {
