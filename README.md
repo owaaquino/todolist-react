@@ -1,13 +1,13 @@
 # Another To Do List App.
 
-**Goals:**
+**Goal:**
 
-- Our main goal here is to learn the C.R.U.D features of React.js
+- Our goal is to learn the Create Reade Updaet Delete (C.R.U.D) features of React.js
 
 **Features:**
 
-- Allow user to add list items
-- Allow user to check/cross out a finish list
+- Allow users to add items in to-do list.
+- Allow users to check/cross-out a completed item/list.
 
 **Techs:**
 
@@ -26,19 +26,19 @@
 
 # Notes
 
-Some prerequisites:
+Prerequisites:
 
-- Nodejs installed on your unit
-- NPM installed on your unit
-- create-react-app installed ( check out [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app) for how to install the framework)
-- Understanding Javascript (ES6)
-- Basic knowledge about React.js framework
+- Nodejs must be installed in your unit.
+- NPM must be installed in your unit
+- Install create-react-app in your node modules ( check out [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app) for how to install the framework)
+- Have basic understanding of Javascript (ES6)
+- Have basic knowledge about React.js framework
 
-## DISCLAIMER: THIS IS NOT A REACT.JS BEGGINNERS GUIDE/TUTORIAL
+### DISCLAIMER: THIS IS NOT A REACT.JS BEGGINNERS GUIDE/TUTORIAL
 
-## 1. Creating the ADD Funciton
+## 1. Create ADD Function
 
-Lets start by creating a form with input box and and a add button
+Let us start by creating a TodoForm.js component for our form with input box and add button.
 ```javascript
     import React from "react";
 
@@ -56,7 +56,8 @@ Lets start by creating a form with input box and and a add button
 
     export default TodoForm;
 ```
-After that, we create a function for our form when submitted
+After that, we create a "submit" function for the form.
+
 ```javascript
     import React from "react";
 
@@ -83,7 +84,9 @@ After that, we create a function for our form when submitted
 
     export default TodoForm;
 ```
-Next, we needed to get the value from the input box and transfer it to our state
+
+Then, we need to get the value from the input box and transfer it to our state.
+
 ```javascript
     import React from "react";
 
@@ -120,9 +123,10 @@ Next, we needed to get the value from the input box and transfer it to our state
 
     export default TodoForm;
 ```
-## 2. Read the new item to the list component
+## 2. Read the new item in the list component.
 
-First, lets create a component that will receive the state value and display it to the list item
+Initially we create a component that will receive the state value and display it to the list item.
+
 ```javascript
     import React from "react";
 
@@ -145,7 +149,7 @@ First, lets create a component that will receive the state value and display it 
 
     export default TodoList;
 ```
-Next, to be able to display all todo items we need to loop into our state object to display every item in it
+Then we need to loop into our state object to display all to-do items.
 ```javascript
     import React, { Component } from "react";
     import "./App.css";
@@ -189,9 +193,9 @@ Next, to be able to display all todo items we need to loop into our state object
 
     export default App;
 ```
-## 3. Now lets create a Delete function for our to do list item
+## 3. Now create a Delete function for the to-do list item.
 
-In our App.js, we create a new function called removeToDoItem and  pass it on to our list item as props.
+In the App.js, we create a new function called removeToDoItem and pass it on to our list item as props.
 ```javascript
     import React, { Component } from "react";
     import "./App.css";
@@ -239,7 +243,9 @@ In our App.js, we create a new function called removeToDoItem and  pass it on to
 
     export default App;
 ```
-In our TodoList.js component, we added the props function we created from App.js to the delete button we have.
+
+In our TodoList.js component, we add the props function we created from App.js to the delete button.
+
 ```javascript
     import React from "react";
 
@@ -271,9 +277,10 @@ In our TodoList.js component, we added the props function we created from App.js
 
     export default TodoList;
 ```
-## 4. Adding our Update functionality.
+## 4. Add our Update functionality.
 
-In ToDoList.js, we added a function handlechange for changes in our to do item inputbox.
+In ToDoList.js, we add a function "handlechange" for every update in our to-do item inputbox.
+
 ```javascript
     import React from "react";
 
@@ -316,7 +323,7 @@ In ToDoList.js, we added a function handlechange for changes in our to do item i
 
     export default TodoList;
 ```
-In our App.js, we create a new function updateTodos to set the states new value
+In our App.js, we create a new function "updateTodos" to set the state's new value.
 ```javascript
     import React, { Component } from "react";
     import "./App.css";
@@ -371,9 +378,11 @@ In our App.js, we create a new function updateTodos to set the states new value
     export default App;
 ```
 
-## 5. Toggling the To Do Item checkbox
+## 5. Toggle the To-Do Item checkbox.
 
-Now the last part is making the checkbox toggle, so we can set it to completed or incomplete. We create a new function in our TodoList.js called toggleCheckbox. Unlike handleChange function we update the item "isCompleted" state to true or false.
+Now the last part is to make the checkbox toggle, so that we can set it to complete or incomplete. Then, we create a new function in our TodoList.js called "toggleCheckbox".
+
+However unlike the "handleChange" function, we must update the item "isCompleted" state to true or false.
 ```javascript
     import React from "react";
 
