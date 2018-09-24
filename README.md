@@ -21,8 +21,8 @@
 
 **Live links:**
 
-- Codepen -
-- Hosted with Netlify -
+- Codepen - not yet
+- Hosted with Netlify -[https://another-to-do-list-app.netlify.com/](https://another-to-do-list-app.netlify.com/)
 
 # Notes
 
