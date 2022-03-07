@@ -2,7 +2,7 @@
 
 ## Refactor plan
 
-- [ ] Introducing hooks
+- [x] Introducing hooks
 - [ ] Manage state with redux-toolkit
 - [ ] Add Back-end
 - [ ] Re-design app
