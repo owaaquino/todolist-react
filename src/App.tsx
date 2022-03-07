@@ -34,14 +34,7 @@ const App = () => {
       <TodoForm />
       <ul>
         {todos.map((todo, id) => (
-          <Todo
-            key={id}
-            todo={todo}
-            index={id}
-            remove={""}
-            edit={""}
-            toggle={""}
-          />
+          <Todo key={id} todo={todo} index={id} />
         ))}
       </ul>
     </div>
