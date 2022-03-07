@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
-class TodoForm extends React.Component {
-  todoRef = React.createRef();
+const TodoForm = (props) => {
+  const [text, setText] = useState("");
 
-  addItemOnList = e => {
+  const addItemOnList = (e) => {
     e.preventDefault();
+
     const todoItem = {
-      todo: this.todoRef.current.value,
-      isCompleted: false
+      todo: text,
+      isCompleted: false,
     };
-    this.props.addToDoItems(todoItem);
+
+    props.addToDoItems(todoItem);
     e.currentTarget.reset();
   };
 
-  render() {
-    return (
-      <form id="todoList-form" onSubmit={this.addItemOnList}>
-        <input type="text" name="todosTxtbx" ref={this.todoRef} required />
-        <button>Add +</button>
-      </form>
-    );
-  }
-}
+  return (
+    <form id="todoList-form" onSubmit={addItemOnList}>
+      <input
+        type="text"
+        name="todosTxtbx"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        required
+      />
+      <button>Add +</button>
+    </form>
+  );
+};
 
 export default TodoForm;
