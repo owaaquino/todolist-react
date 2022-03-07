@@ -1,41 +1,42 @@
 import React, { useState } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import Todo from "./components/Todo";
 
 const App = () => {
-  const [todoItems, setTodoItems] = useState({});
+  const [todoItems, setTodoItems] = useState([]);
 
-  const addToDoItems = (item) => {
-    const items = { ...todoItems };
-    console.log(items);
-    items[`item${Date.now()}`] = item;
-    setTodoItems(items);
+  const handleAdd = (todo) => {
+    setTodoItems([todo, ...todoItems]);
   };
 
-  const removeToDoItem = (item) => {
-    const todos = { ...todoItems };
-    delete todos[item];
-    setTodoItems(todos);
+  const handleRemove = (id) => {
+    todoItems.splice(id, 1);
+    setTodoItems([...todoItems]);
   };
 
-  const updateTodos = (key, updatedTodo) => {
-    const todos = { ...todoItems };
-    todos[key] = updatedTodo;
-    setTodoItems(todos);
+  const handleEdit = (id, text) => {
+    todoItems[id].text = text;
+    setTodoItems([...todoItems]);
+  };
+
+  const handleToggle = (id, isCompleted) => {
+    todoItems[id].isCompleted = !isCompleted;
+    setTodoItems([...todoItems]);
   };
 
   return (
     <div className="App">
-      <TodoForm addToDoItems={addToDoItems} />
+      <TodoForm handleAdd={handleAdd} />
       <ul>
-        {Object.keys(todoItems).map((key) => (
-          <TodoList
-            key={key}
-            index={key}
-            todoItems={todoItems[key]}
-            removeToDoItem={removeToDoItem}
-            updateTodos={updateTodos}
+        {todoItems.map((todo, id) => (
+          <Todo
+            key={id}
+            todo={todo}
+            index={id}
+            remove={handleRemove}
+            edit={handleEdit}
+            toggle={handleToggle}
           />
         ))}
       </ul>

@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-const TodoForm = (props) => {
+const TodoForm = ({ handleAdd }) => {
   const [text, setText] = useState("");
 
-  const addItemOnList = (e) => {
+  const createTodo = (e) => {
     e.preventDefault();
 
     const todoItem = {
-      todo: text,
+      text: text,
       isCompleted: false,
     };
 
-    props.addToDoItems(todoItem);
+    handleAdd(todoItem);
     e.currentTarget.reset();
   };
 
   return (
-    <form id="todoList-form" onSubmit={addItemOnList}>
+    <form id="todoList-form" onSubmit={createTodo}>
       <input
         type="text"
         name="todosTxtbx"
