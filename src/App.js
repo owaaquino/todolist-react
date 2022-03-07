@@ -1,52 +1,46 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-class App extends Component {
-  state = {
-    todoItems: {},
-  };
+const App = () => {
+  const [todoItems, setTodoItems] = useState({});
 
-  addToDoItems = (item) => {
-    const items = { ...this.state.todoItems };
+  const addToDoItems = (item) => {
+    const items = { ...todoItems };
     console.log(items);
     items[`item${Date.now()}`] = item;
-    this.setState({
-      todoItems: items,
-    });
+    setTodoItems(items);
   };
 
-  removeToDoItem = (item) => {
-    const todos = { ...this.state.todoItems };
+  const removeToDoItem = (item) => {
+    const todos = { ...todoItems };
     delete todos[item];
-    this.setState({ todoItems: todos });
+    setTodoItems(todos);
   };
 
-  updateTodos = (key, updatedTodo) => {
-    const todos = { ...this.state.todoItems };
+  const updateTodos = (key, updatedTodo) => {
+    const todos = { ...todoItems };
     todos[key] = updatedTodo;
-    this.setState({ todoItems: todos });
+    setTodoItems(todos);
   };
 
-  render() {
-    return (
-      <div className="App">
-        <TodoForm addToDoItems={this.addToDoItems} />
-        <ul>
-          {Object.keys(this.state.todoItems).map((key) => (
-            <TodoList
-              key={key}
-              index={key}
-              todoItems={this.state.todoItems[key]}
-              removeToDoItem={this.removeToDoItem}
-              updateTodos={this.updateTodos}
-            />
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <TodoForm addToDoItems={addToDoItems} />
+      <ul>
+        {Object.keys(todoItems).map((key) => (
+          <TodoList
+            key={key}
+            index={key}
+            todoItems={todoItems[key]}
+            removeToDoItem={removeToDoItem}
+            updateTodos={updateTodos}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default App;
