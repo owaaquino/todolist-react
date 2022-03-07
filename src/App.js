@@ -2,21 +2,22 @@ import React, { Component } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+
 class App extends Component {
   state = {
-    todoItems: {}
+    todoItems: {},
   };
 
-  addToDoItems = item => {
+  addToDoItems = (item) => {
     const items = { ...this.state.todoItems };
     console.log(items);
     items[`item${Date.now()}`] = item;
     this.setState({
-      todoItems: items
+      todoItems: items,
     });
   };
 
-  removeToDoItem = item => {
+  removeToDoItem = (item) => {
     const todos = { ...this.state.todoItems };
     delete todos[item];
     this.setState({ todoItems: todos });
@@ -33,7 +34,7 @@ class App extends Component {
       <div className="App">
         <TodoForm addToDoItems={this.addToDoItems} />
         <ul>
-          {Object.keys(this.state.todoItems).map(key => (
+          {Object.keys(this.state.todoItems).map((key) => (
             <TodoList
               key={key}
               index={key}
