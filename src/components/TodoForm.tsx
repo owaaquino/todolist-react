@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
+import { useAppDispatch } from "app/hooks";
+import { add } from "reducers/todoSlice";
 
-const TodoForm = ({ handleAdd }) => {
+const TodoForm = () => {
   const [text, setText] = useState("");
+  const dispatch = useAppDispatch();
 
-  const createTodo = (e) => {
+  const createTodo = (e: FormEvent) => {
     e.preventDefault();
 
-    const todoItem = {
-      text: text,
-      isCompleted: false,
-    };
-
-    handleAdd(todoItem);
-    e.currentTarget.reset();
+    dispatch(add({ text, isCompleted: false }));
   };
 
   return (

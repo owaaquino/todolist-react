@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <TodoForm handleAdd={handleAdd} /> */}
+      <TodoForm />
       <ul>
         {todos.map((todo, id) => (
           <Todo
